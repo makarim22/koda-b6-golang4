@@ -1,24 +1,13 @@
 package main
 
-import ("fmt" 
-        "errors"
-		"bufio"
-		"os"
-		"strings"
-		"strconv"
-	)
-
-func convertTemp (celcius float64, temp string) (float64, error) {
-	if temp == "1" {
-		return (celcius * 9 / 5 ) + 32 , nil 
-	} else if temp == "2" {
-		return celcius + 273.15, nil
-	} else if temp == "3" {
-		return celcius *  4 / 5, nil
-	} else {
-      return 0, errors.New("pilihan tidak valid")
-	}
-}
+import (
+	"bufio"
+	"fmt"
+	"golang-4/convert"
+	"os"
+	"strconv"
+	"strings"
+)
 
 func endApp () {
   fmt.Println("program berakhir")
@@ -57,7 +46,7 @@ func main () {
 
 
 
-	tempConverted, err := convertTemp(celsiusValue, choice)
+	tempConverted, err := convert.ConvertTemp(celsiusValue, choice)
 	if err != nil {
 		// fmt.Println("Error", err)
 		panic(err)
