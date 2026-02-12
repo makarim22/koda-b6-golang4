@@ -59,7 +59,8 @@ func main () {
 
 	tempConverted, err := convertTemp(celsiusValue, choice)
 	if err != nil {
-		fmt.Println("Error", err)
+		// fmt.Println("Error", err)
+		panic(err)
 	} else {
 		fmt.Println("nilai konversi adalah", tempConverted)
 	}
