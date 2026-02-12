@@ -11,8 +11,11 @@ import (
 
 func endApp () {
   fmt.Println("program berakhir")
-  err := recover()
-  fmt.Println("terjadi panic", err)
+   if r := recover(); r != nil { 
+      fmt.Println("terjadi panic:", r)
+  } else {
+      fmt.Println("Program selesai tanpa panic.") 
+  }
 }
 
 func main () {
