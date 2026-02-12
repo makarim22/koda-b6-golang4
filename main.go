@@ -27,17 +27,13 @@ func endApp () {
 }
 
 func main () {
-	// celciusTemp := 25
-
 	defer endApp()
 
 	reader := bufio.NewReader(os.Stdin) 
 
 	fmt.Println("--- Konverter Suhu Celsius ---")
 
-	fmt.Println(" 1 : Fahrenheit ")
-	fmt.Println(" 2 : Kelvin ")
-	fmt.Println(" 3 : Reamur ")
+	fmt.Println("--- Input nilai celcius ---")
 
 	var celsiusInput string
 	var celsiusValue float64
@@ -47,6 +43,10 @@ func main () {
 	celsiusInput = strings.TrimSpace(celsiusInput)      
 	celsiusValue, err = strconv.ParseFloat(celsiusInput, 64) 
 
+	fmt.Println("--- Masukkan pilihan suhu ---")
+	fmt.Println(" 1 : Fahrenheit ")
+	fmt.Println(" 2 : Kelvin ")
+	fmt.Println(" 3 : Reamur ")
 
 	var choice string
 	
